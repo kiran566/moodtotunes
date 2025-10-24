@@ -17,12 +17,23 @@ def get_spotify_recommendations(sentiment: str):
     else:
         query = "chill"
 
+    # tracks = sp.search(q=query, type="track", limit=5)
+    # return [
+    #     {
+    #         "name": t["name"],
+    #         "artist": t["artists"][0]["name"],
+    #         "url": t["external_urls"]["spotify"]
+    #     }
+    #     for t in tracks["tracks"]["items"]
+    # ]
     tracks = sp.search(q=query, type="track", limit=5)
     return [
-        {
+       {
             "name": t["name"],
             "artist": t["artists"][0]["name"],
-            "url": t["external_urls"]["spotify"]
+            "url": t["external_urls"]["spotify"],
+            "preview_url": t["preview_url"]  # <-- Add this
         }
         for t in tracks["tracks"]["items"]
-    ]
+   ]
+

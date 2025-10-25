@@ -40,7 +40,7 @@ def get_spotify_recommendations(sentiment: str, market: str = None):
 
     # 3. Pick 5 random tracks *from that batch*
     # Use min() in case Spotify returns fewer than 5 tracks
-    num_to_select = min(5, len(all_tracks))
+    num_to_select = min(10, len(all_tracks))
     selected_tracks = random.sample(all_tracks, num_to_select)
 
     # --- End of Randomization Logic ---

@@ -5,3 +5,5 @@ python-dotenv
 transformers
 torch
 spotipy
+flask-bcrypt 
+flask-jwt-extended
